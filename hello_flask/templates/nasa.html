@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>title</title>
+</head>
+<body>
+      <h1> Here is Nasa's image of the day!</h1>
+     <h3>{{data['title']}}</h3>
+
+    {% if data['media_type'] == "video" %}
+        <iframe width="420" height="315" src="{{data['url']}}"></iframe>
+    {% else %}
+        <img src="{{data['url']}}">
+    {% endif %}
+
+    <p>{{data['explanation']}}</p>
+
+      
+    
+</body>
+</html>
