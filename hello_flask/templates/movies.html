@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}" />
+    </head>
+    <body>
+           <h1>Movie Results:</h1>
+
+           {% for result in results %}
+           <div class = "movie_div">
+                <h3>{{result['title']}}</h3>
+                <p> Year Released: {{result['year']}} </p>
+
+
+                {% if result['cast'] == [] %}
+                  <p> Cast: N/A </p>
+                {% else %}
+                   <p> Cast: {{result['cast']}}</p>
+                {% endif %}
+
+
+                {% if result['genres'] == [] %}
+                  <p> Genre/s: N/A </p>
+                {% else %}
+                   <p> Genres: {{result['genres']}}</p>
+                {% endif %}
+
+           </div>   
+           {% endfor %}
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

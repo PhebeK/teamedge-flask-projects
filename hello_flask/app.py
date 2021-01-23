@@ -35,6 +35,16 @@ def movies_json():
         json_info = json.load(json_data)
         return jsonify(json_info)
 
+@app.route('/api/v1/movies/results')
+def all_movies():
+    json_info = ''
+    results = []
+    movies_path = os.path.join(app.static_folder, 'data', 'movies.json')
+    with open(movies_path, 'r') as raw_json:
+        json_info = json.load(raw_json)
+        for movie in json_info:
+            results.append(movie)
+        return render_template('movies.html',results=results)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

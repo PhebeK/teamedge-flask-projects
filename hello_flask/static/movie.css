@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(255, 249, 198);
+  }
+
+  h1 {
+    color: black;
+    text-align: center;
+  }
+  
+  p {
+    font-family: verdana;
+    font-size: 20px;
+  }
+
+  body.groove {outline-style: groove;}
