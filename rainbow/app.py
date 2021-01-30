@@ -6,11 +6,9 @@ app = Flask(__name__)
 def index():
     return "welcome to Phebe's Rainbow Project"
 
-
 @app.route('/red')
 def red():
     return render_template('red.html')
-
 
 @app.route('/orange')
 def orange():
