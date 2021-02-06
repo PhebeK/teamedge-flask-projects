@@ -5,37 +5,51 @@ app = Flask(__name__)
 
 @app.route('/red')
 def red():
-    return render_template('rainbow.html',color='red')
+    color = "red"
+    return render_template('color.html', color = color)
+
 
 @app.route('/orange')
 def orange():
-    return render_template('rainbow.html',color='orange')
+    color = "orange"
+    return render_template('color.html', color = color)
+
 
 @app.route('/yellow')
 def yellow():
-    return render_template('rainbow.html',color='yellow')
+    color = "yellow"
+    return render_template('color.html', color = color)
+
 
 @app.route('/green')
 def green():
-    return render_template('rainbow.html',color='green')
+    color = "green"
+    return render_template('color.html', color = color)
+
 
 @app.route('/blue')
 def blue():
-    return render_template('rainbow.html',color='blue')
+    color = "blue"
+    return render_template('color.html', color = color)
+
 
 @app.route('/indigo')
 def indigo():
-    return render_template('rainbow.html',color='indigo')
+    color = "indigo"
+    return render_template('color.html', color = color)
+
 
 @app.route('/violet')
 def violet():
-    return render_template('rainbow.html',color='violet')
+    color = "violet"
+    return render_template('color.html', color = color)
+
 
 @app.route('/rainbow')
 def rainbow():
-    colors =['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
-    return render_template('rainbow.html', colors=colors)
+    colors=["red","orange","yellow","green","blue","indigo","violet"]
+    return render_template('rainbowlist.html', colors = colors)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(debug = True, host ='0.0.0.0')
