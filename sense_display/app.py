@@ -1,21 +1,19 @@
-from flask import Flask, redirect, render_template, url_for, request
+from flask import Flask, render_template, request, current_app as app
+from sense_emu import SenseHat
+
 app = Flask(__name__)
+sense = SenseHat()
 
 
 @app.route('/')
 def index():
-    return ("Phebe's SenseHat Project")
+    return render_template("message.html")
 
-@app.route('/done')
+
+@app.route('/done', methods=['GET', 'POST'])
 def done():
-    return ("Message sent. Thank you :)")
-
-@app.route('/welcome' ,methods = ['POST','GET'])
-def(welcome):
-    if request.method == 'POST':
-        user = request.form['msg']
-        return redirect(url_for('success'))
-
+    message = request.form['message']
+    return render_template('done.html', message = message)
 
 if __name__ == '__main__':
-    app.run(debug = True, host ='0.0.0.0')
+    app.run(debug = True, host='0.0.0.0')
