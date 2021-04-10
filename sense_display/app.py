@@ -13,6 +13,8 @@ def index():
 @app.route('/done', methods=['GET', 'POST'])
 def done():
     message = request.form['message']
+    sense.show_message(message)
+    
     return render_template('done.html', message = message)
 
 if __name__ == '__main__':

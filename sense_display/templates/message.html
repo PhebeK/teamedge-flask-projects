@@ -2,17 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Message Submission</title>
+    <title>Send Phebe a message!</title>
+    <style>
+    body {
+  background-image: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%); }
+       
+        </style>       
+                                                                
 </head>
 <body>
-   <h1> Phebe's SenseHat Project</h1>
-    <form action="http://localhost:5000/welcome" method="get">
-        <label for="msg">Message:</label>
-        <input type="text" id="msg" message="msg"><br><br>
-        <label for="from">From:</label>
-        <input type="text" id="from" name="from"><br><br>
-        <input type="submit" value="Send"> 
-
+   <h1> Send Phebe a message!</h1>
+    <form action="/done" method="post">
+         
+       <input type="text" name="message" />
+       <input type="submit" />
+           
     </form>
     
 
